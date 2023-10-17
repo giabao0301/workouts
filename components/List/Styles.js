@@ -20,7 +20,7 @@ const styles = StyleSheet.create({
   },
   selectButton: {
     padding: 10,
-    width: 120,
+    width: 130,
   },
   sectionHeader: {
     color: '#fff',

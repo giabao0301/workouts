@@ -10,16 +10,12 @@ function Workouts(props) {
     uri: 'https://st2.depositphotos.com/9527076/12335/i/950/depositphotos_123359068-stock-photo-fitness-workout-background-dumbbells-on.jpg',
   };
 
-  const [selectedItems, setSelectedItem] = useState([]);
-  const selectedHandler = info => {
+  const saveDataHandler = (itemId, selected) => {
     workouts.forEach(workout => {
-      if (workout.id === info.id && info.selected) {
-        setSelectedItem(prevItem => {
-          return [...prevItem, workout.type];
-        });
+      if (workout.id === itemId) {
+        return props.onUpdateData(workout, selected);
       }
     });
-    props.renderItems(selectedItems);
   };
 
   return (
@@ -32,9 +28,8 @@ function Workouts(props) {
           data={workouts}
           renderItem={({item}) => (
             <WorkoutItem
-              renderItems={info => selectedHandler(info)}
+              onSaveData={selected => saveDataHandler(item.id, selected)}
               type={item.type}
-              id={item.id}
             />
           )}
         />

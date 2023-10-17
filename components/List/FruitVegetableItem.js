@@ -9,7 +9,6 @@ function FruitVegetableItem(props) {
       <Text style={styles.itemName}>{props.data}</Text>
       {/* <SelectButton
         // onSelected={(id, selected) => selectedHandler(id, selected)}
-        id={props.id}
       /> */}
     </View>
   );

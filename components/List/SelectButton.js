@@ -7,15 +7,16 @@ function SelectButton(props) {
   const selectHandler = () => {
     setSelected(selected => !selected);
   };
+
   useEffect(() => {
-    props.onSaveInfo(props.id, selected);
+    props.onSaveState(selected);
   }, [selected]);
 
   return (
     <View style={styles.selectButton}>
       <Button
         title={selected ? 'DESELECT' : 'SELECT'}
-        onPress={() => selectHandler()}
+        onPress={selectHandler}
       />
     </View>
   );
