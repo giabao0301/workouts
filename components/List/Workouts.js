@@ -3,7 +3,7 @@ import React from 'react';
 import {workouts} from '../data';
 import {FlatList, ImageBackground, View} from 'react-native';
 import WorkoutItem from './WorkoutItem';
-import ListHeader from '../ListHeader/ListHeader';
+import ListHeader from './ListHeader';
 import styles from './Styles';
 
 function Workouts(props) {

@@ -3,7 +3,7 @@ import React from 'react';
 import {fruits_vegetables} from '../data';
 import {ImageBackground, SectionList, Text, View} from 'react-native';
 import FruitVegetableItem from './FruitVegetableItem';
-import ListHeader from '../ListHeader/ListHeader';
+import ListHeader from './ListHeader';
 import styles from './Styles';
 
 const image = {
