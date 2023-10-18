@@ -6,7 +6,8 @@ import SelectedItem from '../List/SelectedItem';
 
 function HomeScreen() {
   const [selectedWorkouts, setSelectedWorkouts] = useState([]);
-  const updateDataHandler = (workout, selected) => {
+  const [selectedFruitVegetables, setSelectedFruitVegetables] = useState([]);
+  const updateWorkoutHandler = (workout, selected) => {
     if (workout && selected) {
       setSelectedWorkouts(prevSelectedWorkouts => {
         return [...prevSelectedWorkouts, workout];
@@ -22,11 +23,29 @@ function HomeScreen() {
     }
   };
 
+  const updateFruitVegetableHandler = (fruit_vegetable, selected) => {
+    if (fruit_vegetable && selected) {
+      setSelectedFruitVegetables(prevFruitVegetables => {
+        return [...prevFruitVegetables, fruit_vegetable];
+      });
+    } else {
+      const filteredItems = selectedFruitVegetables.filter(
+        selectedFruitVegetable => {
+          return selectedFruitVegetable !== fruit_vegetable;
+        },
+      );
+      setSelectedFruitVegetables(filteredItems);
+    }
+  };
+
   return (
     <View style={styles.homeScreen}>
-      <Workouts onUpdateData={updateDataHandler} />
-      <FruitsVegetables />
-      <SelectedItem renderItems={selectedWorkouts} />
+      <Workouts onUpdateWorkout={updateWorkoutHandler} />
+      <FruitsVegetables onUpdateFruitVegetable={updateFruitVegetableHandler} />
+      <SelectedItem
+        renderWorkout={selectedWorkouts}
+        renderFruitVegetable={selectedFruitVegetables}
+      />
     </View>
   );
 }

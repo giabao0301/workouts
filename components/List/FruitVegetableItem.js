@@ -1,15 +1,16 @@
 import React from 'react';
 import {View, Text} from 'react-native';
-import SelectButton from './SelectButton';
+import Button from './Button';
 import styles from './Styles';
 
 function FruitVegetableItem(props) {
+  const saveStateHandler = selected => {
+    props.onSaveData(selected);
+  };
   return (
     <View style={styles.item}>
       <Text style={styles.itemName}>{props.data}</Text>
-      {/* <SelectButton
-        // onSelected={(id, selected) => selectedHandler(id, selected)}
-      /> */}
+      <Button onSaveState={saveStateHandler} />
     </View>
   );
 }

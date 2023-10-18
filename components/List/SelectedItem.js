@@ -3,15 +3,16 @@ import {Text, View} from 'react-native';
 import styles from './Styles';
 
 function SelectedItem(props) {
-  const renderList = props.renderItems
-    .map(renderItem => {
-      return renderItem.type;
-    })
-    .join(', ');
+  const Workouts = props.renderWorkout.map(renderItem => {
+    return renderItem.type;
+  });
+
+  const FruitVegetables = [...props.renderFruitVegetable];
+  const Merged = [...Workouts, ...FruitVegetables];
   return (
     <View>
       <Text style={styles.header}>SELECTED EXERCISES:</Text>
-      <Text style={styles.itemName}>{renderList}</Text>
+      <Text style={styles.itemName}>{Merged.join(', ')}</Text>
     </View>
   );
 }

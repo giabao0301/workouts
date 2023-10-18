@@ -1,16 +1,16 @@
-import React, {useState} from 'react';
+import React from 'react';
 import {Text, View} from 'react-native';
 import styles from './Styles';
-import SelectButton from './SelectButton';
+import Button from './Button';
 
 function WorkoutItem(props) {
   const saveStateHandler = selected => {
-    props.onSaveData(selected);
+    props.onSaveWorkout(selected);
   };
   return (
     <View style={styles.item}>
       <Text style={styles.itemName}>{props.type}</Text>
-      <SelectButton onSaveState={saveStateHandler} />
+      <Button onSaveState={saveStateHandler} />
     </View>
   );
 }

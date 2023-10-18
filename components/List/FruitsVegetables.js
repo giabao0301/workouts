@@ -8,7 +8,17 @@ import styles from './Styles';
 const image = {
   uri: 'https://siegend.vn/wp-content/uploads/2023/02/cong-thuc-cho-mon-salad-an-toan-141221-03.jpg',
 };
-function FruitsVegetables() {
+function FruitsVegetables(props) {
+  const saveDataHandler = (item, selected) => {
+    fruits_vegetables.forEach(fruit_vegetable => {
+      fruit_vegetable.data.forEach(element => {
+        if (element === item) {
+          return props.onUpdateFruitVegetable(element, selected);
+        }
+      });
+    });
+  };
+
   return (
     <View>
       <ListHeader>SectionList - Fruits & Vegetables</ListHeader>
@@ -17,7 +27,12 @@ function FruitsVegetables() {
           style={styles.list}
           sections={fruits_vegetables}
           keyExtractor={(item, index) => item + index}
-          renderItem={({item}) => <FruitVegetableItem data={item} />}
+          renderItem={({item}) => (
+            <FruitVegetableItem
+              onSaveData={selected => saveDataHandler(item, selected)}
+              data={item}
+            />
+          )}
           renderSectionHeader={({section: {title}}) => (
             <Text style={styles.sectionHeader}>{title}</Text>
           )}
