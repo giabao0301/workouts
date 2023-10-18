@@ -1,3 +1,4 @@
+// Trịnh Gia Bảo - 21521866
 import React, {useState} from 'react';
 import Workouts from '../List/Workouts';
 import FruitsVegetables from '../List/FruitsVegetables';
@@ -22,12 +23,12 @@ function HomeScreen() {
       setSelectedWorkouts(selectedItems);
     }
   };
-
   const updateFruitVegetableHandler = (fruit_vegetable, selected) => {
     if (fruit_vegetable && selected) {
       setSelectedFruitVegetables(prevFruitVegetables => {
         return [...prevFruitVegetables, fruit_vegetable];
       });
+      // Trịnh Gia Bảo - 21521866
     } else {
       const filteredItems = selectedFruitVegetables.filter(
         selectedFruitVegetable => {
@@ -37,7 +38,6 @@ function HomeScreen() {
       setSelectedFruitVegetables(filteredItems);
     }
   };
-
   return (
     <View style={styles.homeScreen}>
       <Workouts onUpdateWorkout={updateWorkoutHandler} />
@@ -49,7 +49,6 @@ function HomeScreen() {
     </View>
   );
 }
-
 export default HomeScreen;
 
 const styles = StyleSheet.create({

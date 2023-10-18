@@ -1,3 +1,4 @@
+// Trịnh Gia Bảo - 21521866
 import React, {useEffect, useState} from 'react';
 import {View, Button} from 'react-native';
 import styles from './Styles';

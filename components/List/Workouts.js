@@ -1,4 +1,5 @@
-import React, {useState} from 'react';
+// Trịnh Gia Bảo - 21521866
+import React from 'react';
 import {workouts} from '../data';
 import {FlatList, ImageBackground, View} from 'react-native';
 import WorkoutItem from './WorkoutItem';
@@ -17,7 +18,7 @@ function Workouts(props) {
       }
     });
   };
-
+  // Trịnh Gia Bảo - 21521866
   return (
     <View>
       <ListHeader>FlatList - Workouts</ListHeader>

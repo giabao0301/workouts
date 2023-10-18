@@ -1,3 +1,4 @@
+// Trịnh Gia Bảo - 21521866
 import React from 'react';
 import {fruits_vegetables} from '../data';
 import {ImageBackground, SectionList, Text, View} from 'react-native';
@@ -18,7 +19,7 @@ function FruitsVegetables(props) {
       });
     });
   };
-
+  // Trịnh Gia Bảo - 21521866
   return (
     <View>
       <ListHeader>SectionList - Fruits & Vegetables</ListHeader>
